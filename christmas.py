@@ -27,12 +27,12 @@ def send_simple_message(email, gifter, giftee):
 	return requests.post(
         "https://api.mailgun.net/v3/{}/messages".format(conf.mailgun_domain),
         auth=("api", conf.api_key),
-        data={"from": "{}Secret Santa <{}santa@mg.leblibrary.com>".format(conf.sender_name, conf.sender_email),
+        data={"from": "{} <{}>".format(conf.sender_name, conf.sender_email),
               "to": [email],
               "subject": "Hello",
-              "text": "Hi {},\n This is your secret santa assignment! This Christmas, you will buy a gift for {}.\n Keep in mind that Mom isn't in this rotation, so we can all buy for her.\n Merry Christmas\n Santa Claus".format(gifter, giftee)})
-
+              "text": "Hi {},\nThis is your secret santa assignment! \nThis Christmas, you will buy a gift for {}.\nKeep in mind that Mom isn't in this rotation, so we can all buy for her.\nMom has everyone's address if you need it.\nRemember this is a SECRET santa so ssssshhhhhhh!\nMerry Christmas\nSanta Claus".format(gifter, giftee)}) 
 assignments = assign_names(names.keys())
 
 for pair in assignments: 
-    send_simple_message(names[pair[0]]["email"], pair[0], pair[1]) 
+    print("{} gives to {}".format(pair[0], pair[1]))
+    print(send_simple_message(names[pair[0]]["email"], pair[0], pair[1]).text)
