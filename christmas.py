@@ -30,7 +30,7 @@ def send_simple_message(email, gifter, giftee):
         data={"from": "{} <{}>".format(conf.sender_name, conf.sender_email),
               "to": [email],
               "subject": "Hello",
-              "text": "Hi {},\nThis is your secret santa assignment! \nThis Christmas, you will buy a gift for {}.\nKeep in mind that Mom isn't in this rotation, so we can all buy for her.\nMom has everyone's address if you need it.\nRemember this is a SECRET santa so ssssshhhhhhh!\nMerry Christmas\nSanta Claus".format(gifter, giftee)}) 
+              "text": "Hi {},\nThis is your secret santa assignment! \nThis Christmas, you will buy a gift for {}.\nRemember this is a SECRET santa so ssssshhhhhhh!\nMerry Christmas\nSanta Claus".format(gifter, giftee)}) 
 assignments = assign_names(names.keys())
 
 for pair in assignments: 
