@@ -130,3 +130,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+!conf.example.py
+conf.*.py

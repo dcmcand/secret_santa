@@ -23,14 +23,26 @@ def assign_names(name_list):
         return assign_names(name_list)
     return assignments
 
+def getInterests(giftee):
+    interests = names[giftee]["interests"]
+    if len(interests) <= 0:
+        return ""
+    msg = "They wrote to Santa and said they were interested in "
+    for interest in interests[:-1]:
+        msg += " {},".format(interest)
+    if len(interests) > 1:
+        msg += " and"
+    msg += " {}.\n".format(interests[-1])
+    return msg
+
 def send_simple_message(email, gifter, giftee):
 	return requests.post(
         "https://api.mailgun.net/v3/{}/messages".format(conf.mailgun_domain),
         auth=("api", conf.api_key),
         data={"from": "{} <{}>".format(conf.sender_name, conf.sender_email),
               "to": [email],
-              "subject": "Hello",
-              "text": "Hi {},\nThis is your secret santa assignment! \nThis Christmas, you will buy a gift for {}.\nRemember this is a SECRET santa so ssssshhhhhhh!\nMerry Christmas\nSanta Claus".format(gifter, giftee)}) 
+              "subject": "Secret Santa",
+              "text": "Hi {},\nThis is your secret santa assignment! \nThis Christmas, you will buy a gift for {}.\n{}Remember this is a SECRET santa so ssssshhhhhhh!\nMerry Christmas\nSanta Claus".format(gifter, giftee, getInterests(giftee))}) 
 assignments = assign_names(names.keys())
 
 for pair in assignments: 
