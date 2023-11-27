@@ -100,5 +100,5 @@ systemd-python==235
 Tempita==0.5.2
 tomlkit==0.12.3
 urllib3==2.0.7
-wcwidth==0.2.5
+wcwidth==0.2.12
 zombie-imp==0.0.2
