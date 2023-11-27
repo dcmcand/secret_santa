@@ -26,7 +26,7 @@ dnspython==2.4.2
 docutils==0.19
 fb-re2==1.0.7
 fedora-third-party==0.10
-file-magic==0.4.0
+file-magic==0.4.1
 fros==1.1
 gpg==1.20.0
 humanize==3.13.1
