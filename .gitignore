@@ -133,3 +133,5 @@ dmypy.json
 !conf.example.py
 conf.*.py
 logs*.json
+*.csv
+!example-config.csv
