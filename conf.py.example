@@ -1,0 +1,8 @@
+"""Configuration file for sending emails"""
+API_KEY = "supersecretstring"
+
+EMAIL_DOMAIN = "mg.bedrock.com"
+
+SENDER_NAME = "Secret Santa"
+
+SENDER_EMAIL = f"santa@{EMAIL_DOMAIN}"
