@@ -1,4 +1,4 @@
-argcomplete==2.0.0
+argcomplete==3.2.2
 astroid==3.0.1
 awscli==2.13.7
 awscrt==0.19.6
